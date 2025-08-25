@@ -1,7 +1,22 @@
 @import "tailwindcss";
 
-/* a tiny bit of base styling */
 @layer base {
-  html, body { @apply bg-white text-zinc-900; }
-  a { @apply text-blue-600 underline-offset-2 hover:underline; }
+  html, body { @apply bg-neutral-900 text-neutral-100 antialiased; }
+  a { @apply hover:underline underline-offset-2; }
+}
+
+@layer utilities {
+  .container { @apply max-w-4xl mx-auto px-6; }
+
+  /* 🇲🇽 Tricolor blink: green → white → red → repeat */
+  @keyframes tricolor {
+    0%   { color: #006847; text-shadow: 0 0 12px rgba(0,104,71,.35); }
+    33%  { color: #ffffff; text-shadow: 0 0 12px rgba(255,255,255,.25); }
+    66%  { color: #CE1126; text-shadow: 0 0 12px rgba(206,17,38,.35); }
+    100% { color: #006847; text-shadow: 0 0 12px rgba(0,104,71,.35); }
+  }
+  .animate-tricolor { animation: tricolor 1.2s infinite steps(1); }
+
+  /* keep the hero perfectly centered even with header/footer present */
+  .hero-center { min-height: 70vh; @apply flex items-center justify-center; }
 }
