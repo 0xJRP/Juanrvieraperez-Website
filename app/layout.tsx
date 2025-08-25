@@ -1,4 +1,5 @@
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata = {
   title: "JRP — Juan Rivera Pérez",
@@ -11,10 +12,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans flex flex-col min-h-screen">
         {/* header - appears on every page */}
         <header className="container flex items-center justify-between py-6">
-          <a href="/" className="text-sm font-semibold tracking-wide hover:underline">JRP</a>
+          <Link href="/" className="text-sm font-semibold tracking-wide hover:underline">
+            JRP
+          </Link>
           <nav className="flex items-center gap-3">
-            <a href="/content" className="text-sm border border-neutral-700/70 rounded-md px-3 py-1.5 hover:bg-neutral-800/70 transition">Content</a>
-            <a href="/about"   className="text-sm border border-neutral-700/70 rounded-md px-3 py-1.5 hover:bg-neutral-800/70 transition">About</a>
+            <Link href="/content" className="text-sm border border-neutral-700/70 rounded-md px-3 py-1.5 hover:bg-neutral-800/70 transition">
+              Content
+            </Link>
+            <Link href="/about" className="text-sm border border-neutral-700/70 rounded-md px-3 py-1.5 hover:bg-neutral-800/70 transition">
+              About
+            </Link>
           </nav>
         </header>
 
@@ -27,10 +34,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div>© {new Date().getFullYear()} JRP</div>
             <div className="space-x-4">
               <a href="https://warpcast.com/Juan" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Warpcast</a>
-              <a href="https://instagram.com/jrp_gg"  target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Instagram</a>
-              <a href="https://x.com/jrp_GG"          target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Twitter</a>
+              <a href="https://instagram.com/jrp_gg" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Instagram</a>
+              <a href="https://x.com/jrp_GG" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Twitter</a>
               <a href="mailto:juanriveraperez00@gmail.com" className="text-red-500 hover:underline">Email</a>
-              <a href="https://t.me/juanriveraperez"  target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Telegram</a>
+              <a href="https://t.me/juanriveraperez" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Telegram</a>
               <a href="https://app.ens.domains/name/juanriveraperez.eth" target="_blank" rel="noopener noreferrer" className="font-mono text-red-500 hover:underline">juanriveraperez.eth</a>
             </div>
           </div>
